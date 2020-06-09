@@ -2,6 +2,16 @@
 
 Normalized interpolation based on bezier curve specified in SVG path data format. Works on React Native / server environment too.
 
+## Install
+
+With NPM:
+`npm i path-interpolation`
+`yarn add path-interpolation`
+
+Use Pika (with ESM):
+
+`import pathInterpolation from 'https://cdn.pika.dev/path-interpolation@^1.0.0'`
+
 ## How to use
 
 Generate a **tween** function from a **SVG path**:
