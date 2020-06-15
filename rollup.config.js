@@ -21,7 +21,14 @@ export default [
   },
   {
     input: 'src/index.ts',
-    output: { file: pkg.browser, name: 'PathInterpolation', format: 'umd' },
+    output: {
+      file: pkg.browser,
+      name: 'PathInterpolation',
+      format: 'umd',
+      globals: {
+        'svg-path-properties': 'svgPathProperties',
+      },
+    },
     plugins: [
       autoExternal(),
       ts(),
