@@ -3,7 +3,7 @@ export function createTween(points: Float32Array, length: number) {
 
   function tweenFn(t: number) {
     const normalizedIndex = roundToNearest(t, normalizedLength)
-    const index = normalizedIndex * (length - 1)
+    const index = Math.round(normalizedIndex * (length - 1))
     return points[index]
   }
   tweenFn._values = points
