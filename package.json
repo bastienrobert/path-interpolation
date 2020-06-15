@@ -1,6 +1,6 @@
 {
   "name": "path-interpolation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "interpolation based SVG path",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
