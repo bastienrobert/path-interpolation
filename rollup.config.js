@@ -1,3 +1,4 @@
+import cleaner from 'rollup-plugin-cleaner'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import autoExternal from 'rollup-plugin-auto-external'
 import ts from 'rollup-plugin-ts'
@@ -10,6 +11,10 @@ import pkg from './package.json'
 const development = process.env.ROLLUP_WATCH
 const production = !development
 
+const cleanerOptions = {
+  targets: ['./dist/'],
+}
+
 export default [
   {
     input: 'src/index.ts',
@@ -17,7 +22,12 @@ export default [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
     ],
-    plugins: [autoExternal(), ts(), production && filesize()],
+    plugins: [
+      cleaner(cleanerOptions),
+      autoExternal(),
+      ts(),
+      production && filesize(),
+    ],
   },
   {
     input: 'src/index.ts',
